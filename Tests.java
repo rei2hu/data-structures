@@ -39,5 +39,18 @@ class Tests {
         assert h.remove() == 5;
         assert h.remove() == 10;
 
+        // dont really have a good way to test the avl
+        AVLTree avl = new AVLTree();
+        avl.insert(1);
+        avl.insert(2);
+        avl.insert(3);
+        assert avl.height() == 1;
+        avl.insert(4);
+        assert avl.height() == 2;
+        avl.insert(5);
+        assert avl.height() == 2;
+        // end avl tree tests
+
+
     }
 }
