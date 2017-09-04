@@ -3,6 +3,22 @@ class Tests {
     public static void main(String[] args) throws Exception {
 
         // insert tests here
+        
+        // graph tests
+        Graph g = new Graph();
+        assert g.addEdge("Here", "There") == 2;
+        assert g.pathExists("Here", "There");
+        assert g.pathExists("There", "Here") == false;
+        assert g.addEdge("There", "Here") == 0;
+        assert g.pathExists("There", "Here");
+        assert g.addEdge("Home", "Here") == 1;
+        assert g.pathExists("Home", "There");
+        assert g.pathExists("Home", "Nonexistant") == false;
+        assert g.addEdge("Nowhere", "Home") == 1;
+        assert g.pathExists("Nowhere", "There");
+        assert g.pathExists("There", "Nowhere") == false;
+        // end graph tests
+
         // queue tests
         Queue q = new Queue();
         q.enqueue(1);
