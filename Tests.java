@@ -49,6 +49,14 @@ class Tests {
         assert avl.height() == 2;
         avl.insert(5);
         assert avl.height() == 2;
+        avl.remove(5);
+        assert avl.height() == 2;
+        avl.remove(2);
+        assert avl.height() == 1;
+        avl.remove(1);
+        assert avl.height() == 1;
+        avl.remove(4);
+        assert avl.height() == 0;
         // end avl tree tests
 
 
