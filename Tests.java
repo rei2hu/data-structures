@@ -23,6 +23,21 @@ class Tests {
         assert s.pop() == 1;
         // end stack tests
 
+        // start minheap test
+        Heap h = new Heap(10);
+        h.insert(2);
+        h.insert(3);
+        h.insert(1);
+        h.insert(5);
+        h.insert(10);
+        h.insert(4);
+        assert h.peek() == 1;
+        assert h.remove() == 1;
+        assert h.remove() == 2;
+        assert h.remove() == 3;
+        assert h.remove() == 4;
+        assert h.remove() == 5;
+        assert h.remove() == 10;
 
     }
 }
