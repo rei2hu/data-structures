@@ -38,6 +38,7 @@ class Tests {
         assert h.remove() == 4;
         assert h.remove() == 5;
         assert h.remove() == 10;
+        // end minheap tests
 
         // dont really have a good way to test the avl
         AVLTree avl = new AVLTree();
