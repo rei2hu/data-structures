@@ -3,7 +3,32 @@ class Tests {
     public static void main(String[] args) throws Exception {
 
         // insert tests here
-        
+
+        // trie tests
+        Trie t = new Trie();
+        t.insert("Hello");
+        assert t.contains("Hello");
+        assert t.contains("hello");
+        assert t.contains("hell") == false;
+        t.insert("helloagain");
+        assert t.contains("hello");
+        assert t.contains("HELLOAGAIN");
+        t.insert("abc");
+        t.insert("abcd");
+        assert t.contains("ABC");
+        assert t.contains("AbcD");
+        t.remove("abc");
+        assert t.contains("ABc") == false;
+        t.insert("abcdefghijklmnopqrstuvwxyz");
+        assert t.contains("abcd");
+        assert t.contains("abcdefghijklmnopqrstuvwxyz");
+        t.remove("abcdefghijklmnopqrstuvwxyz");
+        assert t.contains("abcdefghijklmnopqrstuvwxyz") == false;
+        t.remove("Hello");
+        assert t.contains("hello") == false;
+        t.remove("helloagain");
+        // end trie tests
+
         // graph tests
         Graph g = new Graph();
         assert g.addEdge("Here", "There") == 2;
