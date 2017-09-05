@@ -42,6 +42,9 @@ class Tests {
         assert g.addEdge("Nowhere", "Home") == 1;
         assert g.pathExists("Nowhere", "There");
         assert g.pathExists("There", "Nowhere") == false;
+        assert g.removeEdge("There", "Here");
+        assert g.pathExists("There", "Here") == false;
+        assert g.pathExists("Nowhere", "There");
         // end graph tests
 
         // queue tests

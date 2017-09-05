@@ -22,6 +22,11 @@ public class Graph {
             return this;
         }
 
+        public boolean removeAdjacency(Vertex to) {
+            Vertex to2 = adjacencies.remove(to.name);
+            return to2 != null;
+        }
+
         public boolean equals(Vertex other) {
             return this.name.equals(other.name);
         }
@@ -52,6 +57,16 @@ public class Graph {
         fr = verticies.get(from);
         fr.addAdjacency(verticies.get(to));
         return i;
+    }
+    
+    // return true if the edge actually existed
+    // false if it doesnt
+    public boolean removeEdge(String from, String to) {
+        Vertex fr = verticies.get(from);
+        if (fr == null) return false;
+        Vertex to2 = verticies.get(to);
+        if (to2 == null) return false;
+        return fr.removeAdjacency(to2);
     }
     
     public boolean pathExists(String from, String to) {
